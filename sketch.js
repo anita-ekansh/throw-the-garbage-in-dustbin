@@ -51,19 +51,17 @@ function setup() {
 	ground.addImage(skyImage);
 	ground.scale = 0.59
 
-	sun = createSprite(1100,60);
-	sun.addImage(sunImage);
-	sun.scale = 1;
-
 	ground1 = new Ground(380,480, 2165,40);
-	ball1 = new Ball(100,420);
+	ball1 = new Ball(100,478.8);
 
 	ground2 = new Ground(900, 450,200,20);
 	ground3 = new Ground(800, 430,20, 200);
 	ground4 = new Ground(1000, 430,20, 200);
 	ground5 = new Ground(1180, 430,20, 10000163);
 
-
+	sun = createSprite(1100,60);
+	sun.addImage(sunImage);
+	sun.scale = 1;
 
 	Engine.run(engine);
   
