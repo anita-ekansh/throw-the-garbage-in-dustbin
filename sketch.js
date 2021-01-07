@@ -15,7 +15,7 @@ var sun;
 
 function preload(){
 
-	 skyImage = loadImage("ground.png");
+	 skyImage = loadImage("floor.png");
 	 sky2Image = loadImage("ground.png");
 	 sky3Image = loadImage("ground.png");
 	 sky4Image = loadImage("ground.png");
@@ -23,7 +23,7 @@ function preload(){
 }
 
 function setup() {
-	createCanvas(1164, 500);
+	createCanvas(1164, 512);
 
 
 	engine = Engine.create();
@@ -31,32 +31,34 @@ function setup() {
 
 
 
-	 sky2 = createSprite(899,456);
-	sky2.addImage(skyImage);
-	sky2.scale = 0.2
 
 	sky3 = createSprite(800,440);
-	sky3.addImage(skyImage);
+	sky3.addImage(sky3Image);
 	sky3.scale = 0.2
 	sky3.rotation = 90;
 
 	sky3 = createSprite(1000,440);
-	sky3.addImage(skyImage);
+	sky3.addImage(sky4Image);
 	sky3.scale = 0.2
 	sky3.rotation = 90;
 
-	ground = createSprite(580,546);
+	
+	sky2 = createSprite(899,433);
+	sky2.addImage(sky2Image);
+	sky2.scale = 0.2
+
+	ground = createSprite(580,486);
 	ground.addImage(skyImage);
-	ground.scale = 1.2
+	ground.scale = 0.59
 
 	sun = createSprite(1100,60);
 	sun.addImage(sunImage);
 	sun.scale = 1;
 
-	ground1 = new Ground(380,height, 2165,40);
+	ground1 = new Ground(380,480, 2165,40);
 	ball1 = new Ball(100,420);
 
-	ground2 = new Ground(900, 470,200,20);
+	ground2 = new Ground(900, 450,200,20);
 	ground3 = new Ground(800, 430,20, 200);
 	ground4 = new Ground(1000, 430,20, 200);
 	ground5 = new Ground(1180, 430,20, 10000163);
@@ -85,16 +87,16 @@ function draw() {
   drawSprites();
 
   textSize(20);
-  stroke("orange");
-  strokeWeight(3)
-  fill("red");
-  text ("DUSTBIN",857, 485);
+  stroke("black");
+  strokeWeight(2)
+  fill("white");
+  text ("DUSTBIN",857, 440);
 
   textSize(20);
-  stroke("orange");
-  strokeWeight(3)
-  fill("red");
-  text ("GARBAGE",50,485 );
+  stroke("black");
+  strokeWeight(2)
+  fill("white");
+  text ("GARBAGE",50,380 );
 
  
 }
@@ -102,7 +104,7 @@ function draw() {
 function keyPressed(){
 
 if (keyCode === UP_ARROW){
-Matter.Body.applyForce(ball1.body,ball1.body.position,{x:300,y:-300});
+Matter.Body.applyForce(ball1.body,ball1.body.position,{x:305,y:-305});
 }
 }
 
